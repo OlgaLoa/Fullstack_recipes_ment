@@ -12,17 +12,9 @@ function Category() {
     const [recipes, setRecipes] = useState([]); // состояние списка рецептов по выбранной категории
 	
 
-    // useEffect(() => {// проверка если нет стран
-    //     axios.get('http://127.0.0.1:8000/api/categories/${id}').then(res =>{ //res - ответ (список смотреть в консоли в панели разработчика)
-    //         console.log(res);  //data - данные которые нужны в консоль
-    //         setCategory(res.data); // на экран вывод ( json вывод стран)
-    //     })
-    // }
-    // )
-
     useEffect(() => {
 		
-        fetch('http://127.0.0.1:8000/api/categories/1')
+        fetch(`http://127.0.0.1:8000/api/categories/${id}`)
 				.then(response => response.json())
 				.then(data => {
                     console.log(data)
@@ -32,7 +24,7 @@ function Category() {
 					console.error('Error getting category:', error);
 				});
  
-            fetch('http://127.0.0.1:8000/api/recipes/?category=1')
+            fetch(`http://127.0.0.1:8000/api/recipes/?category=${id}`)
                         .then(response => response.json())
                         .then(data => {
                             console.log(data)
@@ -44,11 +36,11 @@ function Category() {
                           
 		
 	}, [id]); //отслеживанием изменение id
-    // console.log(category.data)
-    // console.log(setCategory)
+    console.log(id)
+
 	return (
         <div className="recipe-list">
-            <h2>Category recipes: </h2>
+            <h2> Category recipes: </h2>
                 <Table striped bordered hover className='recipes'>
                     <thead>
                         <tr>

@@ -9,12 +9,12 @@ from rest_framework.response import Response
 # Существует два способа прямой реализации APIView: с помощью функции или с помощью класса. 
 #для api  "GET /api/categories/ HTTP/1.1" 200 92
           #"GET /api/categories/1/ HTTP/1.1" 200 43
-class CategoryViewSet(viewsets.ModelViewSet): # только для чтения
+class CategoryViewSet(viewsets.ReadOnlyModelViewSet): # только для чтения
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
 #для api http://localhost:8081/recipes/1
-class RecipeViewSet(viewsets.ModelViewSet): # только чтение списка данных по GET-запросу;
+class RecipeViewSet(viewsets.ReadOnlyModelViewSet): # только чтение списка данных по GET-запросу;
     queryset = Recipe.objects.all()  # какие данные следует вернуть клиенту на соответствующий API-запрос
     serializer_class = RecipeSerializer
     
@@ -42,17 +42,4 @@ def recipes_by_category_view(request):
         serializer = CategorySerializer(recipes_by_category, many=True)
         return Response(serializer.data)   
     
-    # if request.method == 'GET':
-    #     dishes = Category.objects.filter(categoryType=request.query_params['category'])
-    #     serializer = CategorySerializer(dishes, many=True)
-    #     return Response(serializer.data)   
-        
-# DRF также позволяет работать с обычными представлениями, основанными на функциях.
-# Он предоставляет набор простых декораторов, которые оборачивают ваши представления на основе функций,
-# чтобы они получали экземпляр Request (а не обычный Django HttpRequest)
-# и позволяли им возвращать Response (а не Django HttpResponse), а также позволяют вам настраивать,
-# как обрабатывается запрос.
-#для поиска блюд по категории выбранной
-# @api_view(http_method_names=['GET'])
-
 

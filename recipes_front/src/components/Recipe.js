@@ -12,7 +12,7 @@ function Recipe() {
 
     useEffect(() => {
         
-            fetch(`http://localhost:8000/api/recipes/1`)
+            fetch(`http://localhost:8000/api/recipes/${id}`)
                 .then(response => response.json())
                 .then(data => {
                     setRecipe(data);
@@ -26,7 +26,7 @@ function Recipe() {
     console.log(id)
     console.log(recipe)
 	return (
-		<div className = "recipes">Recipe by its category
+		<div className = "recipes">Recipe {recipe.title}
 			<Table striped bordered hover className='categories'> 
 				<thead>
 					<tr>

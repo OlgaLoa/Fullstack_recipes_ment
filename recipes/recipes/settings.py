@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'recipes_back',  # activate the new app
     'rest_framework',
     'django_filters',
+    
+    'drf_yasg', # для генерации документации вашего API с помощью Swagger
+
 ]
 
 MIDDLEWARE = [
