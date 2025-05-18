@@ -10,18 +10,20 @@ import { Route, Routes } from 'react-router-dom';
 
 function App() {
 	return (
-		<div className='back_color'>
+	
+			<div className='app_style'>
 
-			<Header />
-			{/* Routes проверяет все свои дочерние элементы <Route>, чтобы найти наилучшее соответствие, и отображает эту часть пользовательского интерфейса */}
-			<Routes> 
-			    <Route path="/" element={<Categories/>} />
-				<Route path="categories/:id" element={<Category  />} />
-				<Route path="/recipes/" element={<Recipes />} />
-				<Route path="/recipes/:id" element={<Recipe />} />
-			</Routes>
-
-			<Footer />
+				<Header />
+				{/* Routes проверяет все свои дочерние элементы <Route>, чтобы найти наилучшее соответствие, и отображает эту часть пользовательского интерфейса */}
+				<Routes> 
+					<Route path="/" element={<Categories/>} />
+					<Route path="categories/:id" element={<Category  />} />
+					<Route path="/recipes/" element={<Recipes />} />
+					<Route path="/recipes/:id" element={<Recipe />} />
+				</Routes>
+				<div className='footer_style'>
+				<Footer />
+				</div>
 		</div>
 	);
 }

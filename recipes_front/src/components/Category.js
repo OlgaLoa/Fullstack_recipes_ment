@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import Table from 'react-bootstrap/Table'; // Не забудь этот импорт!
 import 'bootstrap/dist/css/bootstrap.min.css'; // если ещё не подключал
-import axios from "axios";
+import "../styles/Category.css";
 
 
 function Category() {
@@ -39,9 +39,9 @@ function Category() {
     console.log(id)
 
 	return (
-        <div className="recipe-list">
-            <h2> Category recipes: </h2>
-                <Table striped bordered hover className='recipes'>
+        <div className="category">
+            <h2> Recipes by category </h2>
+                <Table striped bordered hover className='category'>
                     <thead>
                         <tr>
                             <th>ID</th>

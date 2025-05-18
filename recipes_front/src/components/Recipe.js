@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {  useParams } from 'react-router-dom';
 import Table from 'react-bootstrap/Table'; // Не забудь этот импорт!
 import 'bootstrap/dist/css/bootstrap.min.css'; // если ещё не подключал
-// import "../styles/Categories.css";
+import "../styles/Recipe.css";
 
 function Recipe() {
     const params  = useParams(); //используем хук для определения id выбранной категории из адресной строки
@@ -26,7 +26,7 @@ function Recipe() {
     console.log(id)
     console.log(recipe)
 	return (
-		<div className = "recipes">Recipe {recipe.title}
+		<div className = "recipes"> <h2>Recipe "{recipe.title}"</h2>
 			<Table striped bordered hover className='categories'> 
 				<thead>
 					<tr>

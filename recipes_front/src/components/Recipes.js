@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table'; // Не забудь этот импорт!
 import 'bootstrap/dist/css/bootstrap.min.css'; // если ещё не подключал
-import "../styles/Categories.css";
+import "../styles/Recipes.css";
 import { Link } from 'react-router-dom';
 
 function Recipes() {
@@ -22,7 +22,7 @@ function Recipes() {
 	}, []);
 
 	return (
-		<div className = "recipes">All recipes
+		<div className = "recipes"><h2>All recipes</h2>
 			<Table striped bordered hover className='recipes'> 
 				<thead>
 					<tr>

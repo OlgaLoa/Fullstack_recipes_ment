@@ -22,7 +22,7 @@ function Categories() {
 	}, []);
 
 	return (
-		<div className = "categories">All recipe categories
+		<div className = "categories"> <h2>All categories</h2>
 			<Table striped bordered hover className='categories'> 
 				<thead>
 					<tr>
